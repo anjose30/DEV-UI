@@ -4,7 +4,7 @@ import Button from "@/components/Button";
 export default function Home() {
   return (
     <div className="h-svh w-full flex gap-2 p-2">
-      <div className="flex flex-col gap-4">
+      <div className="flex flex-col gap-4 border p-2">
         <Button label="Primary" color="var(--color-base-custom)" />
         <Button
           label="Secondary"

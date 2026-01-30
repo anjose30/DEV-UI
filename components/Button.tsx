@@ -46,7 +46,7 @@ export default function Button({
         className={`
             ${variantStyles[variant]}
             py-2 px-4 rounded-xl shadow-lg
-            transition hover:scale-105 active:scale-95
+            transition hover:scale-105 active:scale-95 select-none
             flex items-center justify-center cursor-pointer hover:shadow-xl relative
             ${disabled ? "opacity-50 cursor-not-allowed! bg-gray-600 text-gray-300!" : ""}
         `}
