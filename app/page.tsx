@@ -1,5 +1,6 @@
 "use client";
 import Button from "@/components/Button";
+import Input from "@/components/Input";
 
 export default function Home() {
   return (
@@ -35,6 +36,9 @@ export default function Home() {
           label="Botón de texto"
         />
       </div>
+      <div className="flex flex-col gap-4 border p-2">
+        < Input label="Nombre" color="var(--color-base-custom)"/>
+      </div>
     </div>
-  );
+  );  
 }
