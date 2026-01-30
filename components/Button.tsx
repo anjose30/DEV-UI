@@ -21,7 +21,7 @@ const variantStyles = {
   outline:
     "border-2 border-[var(--btn-color)] text-[var(--btn-color)] bg-transparent font-bold",
   mini: "bg-[var(--btn-color)] text-white text-xs px-2 py-1",
-  text: "bg-transparent text-[var(--btn-color)] underline font-bold shadow-none hover:scale-100! active:scale-105!",
+  text: "bg-transparent text-[var(--btn-color)] underline font-bold shadow-none hover:scale-100! active:scale-105! hover:shadow-none! p-1!",
 };
 
 export default function Button({
@@ -35,9 +35,7 @@ export default function Button({
   helperText,
 }: ButtonProps) {
   return (
-    <div className="relative group">
-      {helperText && <HelpPop text={helperText} />}
-
+    <div className="relative inline-flex">
       <button
         type={type}
         onClick={onClick}
@@ -49,11 +47,12 @@ export default function Button({
             ${variantStyles[variant]}
             py-2 px-4 rounded-xl shadow-lg
             transition hover:scale-105 active:scale-95
-            flex items-center justify-center cursor-pointer
+            flex items-center justify-center cursor-pointer hover:shadow-xl relative
             ${disabled ? "opacity-50 cursor-not-allowed! bg-gray-600 text-gray-300!" : ""}
         `}
       >
         {children || label}
+        {helperText && <HelpPop text={helperText} />}
       </button>
     </div>
   );
