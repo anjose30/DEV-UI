@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 @theme {
-  --color-base-custom: #3490dc;
+  --color-base-custom: #1B2B40;
 }
 
 :root {
