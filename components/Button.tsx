@@ -20,7 +20,7 @@ const variantStyles = {
     "bg-[color-mix(in_srgb,var(--btn-color)_30%,transparent)] text-[var(--btn-color)] font-bold",
   outline:
     "border-2 border-[var(--btn-color)] text-[var(--btn-color)] bg-transparent font-bold",
-  mini: "bg-[var(--btn-color)] text-white text-xs px-2 py-1",
+  mini: "bg-[var(--btn-color)] text-white text-xs! px-2 py-1",
   text: "bg-transparent text-[var(--btn-color)] underline font-bold shadow-none hover:scale-100! active:scale-105! hover:shadow-none! p-1!",
 };
 
@@ -51,7 +51,8 @@ export default function Button({
             ${disabled ? "opacity-50 cursor-not-allowed! bg-gray-600 text-gray-300!" : ""}
         `}
       >
-        {children || label}
+        <p className="flex gap-1 justify-center items-center">{children}
+        {label}</p>
         {helperText && <HelpPop text={helperText} />}
       </button>
     </div>

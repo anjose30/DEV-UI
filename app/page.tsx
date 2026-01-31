@@ -1,6 +1,8 @@
 "use client";
 import Button from "@/components/Button";
 import Input from "@/components/Input";
+import { AtSign, Download, User } from "lucide-react";
+
 
 export default function Home() {
   return (
@@ -35,15 +37,59 @@ export default function Home() {
           color="var(--color-base-custom)"
           label="Botón de texto"
         />
+        <Button
+          label="Usuario icono"
+          color="var(--color-base-custom)"
+          children={<User />}
+        />
+        <Button
+          color="var(--color-base-custom)"
+          children={<Download />}
+          variant="outline"
+        />
       </div>
       <div className="flex flex-col gap-2 p-2">
-        < Input label="Nombre" color="var(--color-base-custom)" type="text"/>
-        < Input label="Correo" color="var(--color-base-custom)" type="email"/>
-        < Input label="Contraseña" color="var(--color-base-custom)" type="password"/>
-        < Input label="Obligatorio" color="var(--color-base-custom)" type="text" required/>
-        < Input label="Con ayuda" color="var(--color-base-custom)" type="text" helperText="Ingresa tu nombre completo"/>
-        < Input label="Desactivado" color="var(--color-base-custom)" type="text" disabled/>
+        <Input
+          label="Nombre"
+          color="var(--color-base-custom)"
+          type="text"
+          children={<User />}
+        />
+        <Input
+          label="Correo"
+          color="var(--color-base-custom)"
+          type="email"
+          children={<AtSign />}
+        />
+        <Input
+          label="Contraseña"
+          color="var(--color-base-custom)"
+          type="password"
+        />
+        <Input
+          label="Obligatorio"
+          color="var(--color-base-custom)"
+          type="text"
+          required
+        />
+        <Input
+          label="Con ayuda"
+          color="var(--color-base-custom)"
+          type="text"
+          helperText="Ingresa tu nombre completo"
+        />
+        <Input
+          label="Desactivado"
+          color="var(--color-base-custom)"
+          type="text"
+          disabled
+        />
+        <Input
+          label="Fecha de nacimiento"
+          color="var(--color-base-custom)"
+          type="date"
+        />
       </div>
     </div>
-  );  
+  );
 }
