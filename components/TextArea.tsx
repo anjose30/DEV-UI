@@ -49,7 +49,7 @@ export default function TextArea({
           onChange?.(nextValue);
         }}
         className={`          
-          peer w-full px-3 py-2 border shadow-md-10
+          peer w-full px-3 py-2 border shadow-md-10 min-h-18 max-h-40
           hover:shadow-lg hover:scale-105 active:scale-100
           focus:outline-none focus:border-2 transition rounded-xl ${height}
           ${disabled ? "opacity-50 bg-gray-600 cursor-not-allowed border-gray-300! resize-none" : ""}`}
