@@ -1,8 +1,8 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { Eye, EyeOff } from "lucide-react";
 import HelpPop from "./HelpPop";
+import { Asterisk } from "lucide-react";
 
 interface TextAreaProps {
   label: string;
@@ -10,7 +10,7 @@ interface TextAreaProps {
   value?: string;
   disabled?: boolean;
   color?: string;
-  required?: boolean;
+  requeired?: boolean;
   helperText?: string;
   height?: string;
 }
@@ -21,7 +21,7 @@ export default function TextArea({
   value,
   disabled = false,
   color,
-  required: requeired = false,
+  requeired = false,
   helperText,
   height,
 }: TextAreaProps) {
@@ -50,7 +50,7 @@ export default function TextArea({
         }}
         className={`          
           peer w-full px-3 py-2 border shadow-md-10 min-h-18 max-h-40
-          hover:shadow-lg hover:scale-105 active:scale-100
+          hover:shadow-lg hover:scale-105 active:scale-100 min-w-50
           focus:outline-none focus:border-2 transition rounded-xl ${height}
           ${disabled ? "opacity-50 bg-gray-600 cursor-not-allowed border-gray-300! resize-none" : ""}`}
         style={{ color: "#000", borderColor: color }}
@@ -61,18 +61,24 @@ export default function TextArea({
         {helperText && <HelpPop text={helperText} />}
       </div>
       {requeired && (
-        <p
+        <div
           className={`absolute top-6 right-3 text-2xl text-red-600 transition-opacity peer-focus:opacity-0 ${
             isActive ? "opacity-0" : "opacity-100"
           }`}
         >
-          *
-        </p>
+          <div
+              className={`
+                ${requeired ? "text-red-700 scale-80" : ""}
+            `}
+            >
+              <Asterisk />
+            </div>
+        </div>
       )}
 
       <label
         className={`
-          pointer-events-none absolute left-3 px-1 text-gray-500 flex gap-2
+          pointer-events-none absolute left-3 px-1 flex gap-2
           transition-all
           ${isActive ? "-top-1 text-sm" : "top-6 text-base"}
           peer-focus:-top-1 peer-focus:text-sm

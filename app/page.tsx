@@ -1,9 +1,9 @@
 "use client";
 import Button from "@/components/Button";
 import Input from "@/components/Input";
+import Select from "@/components/Select";
 import TextArea from "@/components/TextArea";
 import { AtSign, Download, User } from "lucide-react";
-
 
 export default function Home() {
   return (
@@ -71,7 +71,7 @@ export default function Home() {
           label="Obligatorio"
           color="var(--color-base-custom)"
           type="text"
-          required
+          requeired
         />
         <Input
           label="Con ayuda"
@@ -91,6 +91,31 @@ export default function Home() {
           type="date"
         />
       </div>
+      <div className="flex flex-col gap-2 p-2">
+        <Select
+          options={["Opción 1", "Opción 2", "Opción 3"]}
+          onChange={(value) => console.log(value)}
+          label="Escoje una opción"
+        />
+        <Select
+          options={["Opción 1", "Opción 2", "Opción 3"]}
+          onChange={(value) => console.log(value)}
+          label="Escoje una opción"
+          disabled
+        />
+        <Select
+          options={["Opción 1", "Opción 2", "Opción 3"]}
+          onChange={(value) => console.log(value)}
+          label="Escoje una opción"
+          requeired
+        />
+        <Select
+          options={["Opción 1", "Opción 2", "Opción 3"]}
+          onChange={(value) => console.log(value)}
+          label="Escoje una opción"
+          helperText="hola yo te ayudo"
+        />
+      </div>
       <div className="flex flex-col gap-2 p-2 ">
         <TextArea
           label="Comentarios"
@@ -105,7 +130,7 @@ export default function Home() {
         <TextArea
           label="Comentarios"
           color="var(--color-base-custom)"
-          required
+          requeired
         />
         <TextArea
           label="Comentarios"

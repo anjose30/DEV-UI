@@ -51,8 +51,10 @@ export default function Button({
             ${disabled ? "opacity-50 cursor-not-allowed! bg-gray-600 text-gray-300!" : ""}
         `}
       >
-        <p className="flex gap-1 justify-center items-center">{children}
-        {label}</p>
+        <p className="flex gap-1 justify-center items-center">
+          {children}
+          {label}
+        </p>
         {helperText && <HelpPop text={helperText} />}
       </button>
     </div>

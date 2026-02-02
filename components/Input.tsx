@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { Eye, EyeOff } from "lucide-react";
+import { Asterisk, Eye, EyeOff } from "lucide-react";
 import HelpPop from "./HelpPop";
 
 interface InputProps {
@@ -11,7 +11,7 @@ interface InputProps {
   disabled?: boolean;
   color?: string;
   type?: "text" | "password" | "email" | "date" | "number";
-  required?: boolean;
+  requeired?: boolean;
   helperText?: string;
   children?: React.ReactNode;
 }
@@ -23,7 +23,7 @@ export default function Input({
   disabled = false,
   color,
   type = "text",
-  required: requeired = false,
+  requeired = false,
   helperText,
   children,
 }: InputProps) {
@@ -55,7 +55,7 @@ export default function Input({
           onChange?.(nextValue);
         }}
         className={`          
-          peer w-full px-3 py-2 border shadow-md-10
+          peer w-full px-3 py-2 border shadow-md-10 min-w-50
           hover:shadow-lg hover:scale-105 active:scale-100
           focus:outline-none focus:border-2 transition rounded-xl
           ${hasPrefix ? "pl-10" : ""}
@@ -89,11 +89,17 @@ export default function Input({
       </div>
       {requeired && (
         <p
-          className={`absolute top-7 right-3 text-2xl text-red-600 transition-opacity peer-focus:opacity-0 ${
+          className={`absolute top-6 right-3 text-2xl text-red-600 transition-opacity peer-focus:opacity-0 ${
             isActive ? "opacity-0" : "opacity-100"
           }`}
         >
-          *
+          <div
+            className={`
+                ${requeired ? "text-red-700 scale-80" : ""}
+            `}
+          >
+            <Asterisk />
+          </div>
         </p>
       )}
 
