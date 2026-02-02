@@ -88,7 +88,7 @@ export default function Input({
         {helperText && <HelpPop text={helperText} />}
       </div>
       {requeired && (
-        <p
+        <div
           className={`absolute top-6 right-3 text-2xl text-red-600 transition-opacity peer-focus:opacity-0 ${
             isActive ? "opacity-0" : "opacity-100"
           }`}
@@ -100,7 +100,7 @@ export default function Input({
           >
             <Asterisk />
           </div>
-        </p>
+        </div>
       )}
 
       <label

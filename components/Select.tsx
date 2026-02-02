@@ -54,7 +54,7 @@ export default function Select({
   const isActive = displayValue.length > 0 || isOpen;
 
   return (
-    <div ref={selectRef} className="relative w-full pt-4 select-none">
+    <div ref={selectRef} className="relative max-w-70 pt-4 select-none">
       <div className="absolute top-4 right-0">
         {helperText && <HelpPop text={helperText} />}
       </div>
@@ -69,7 +69,9 @@ export default function Select({
         `}
         style={{ color: "#000", borderColor: color }}
       >
-        <span className={displayValue ? "text-gray-900" : "text-transparent"}>
+        <span
+          className={`${displayValue ? "text-gray-900" : "text-transparent"} truncate flex-1`}
+        >
           {displayValue || label}
         </span>
 
@@ -116,7 +118,8 @@ export default function Select({
                 onChange(option);
                 setIsOpen(false);
               }}
-              className="px-4 py-2 cursor-pointer hover:bg-gray-100 hover:text-lg transition-all text-sm"
+              className="px-4 py-2 cursor-pointer hover:bg-gray-100 hover:text-lg transition-all text-sm truncate"
+              title={option}
             >
               {option}
             </div>
