@@ -1,6 +1,7 @@
 "use client";
 import Button from "@/components/Button";
 import Input from "@/components/Input";
+import IntroAmimation from "@/components/IntroAmimation";
 import Select from "@/components/Select";
 import TextArea from "@/components/TextArea";
 import { AtSign, Download, User } from "lucide-react";
@@ -8,9 +9,10 @@ import { AtSign, Download, User } from "lucide-react";
 export default function Home() {
   return (
     <div className="h-svh w-full flex gap-2 p-2">
+      <IntroAmimation></IntroAmimation>
       <div className="flex flex-col gap-4 p-2">
         <Button label="Primary" color="var(--color-base-custom)" />
-        <Button
+        <Button 
           label="Secondary"
           variant="secondary"
           color="var(--color-base-custom)"
