@@ -51,7 +51,7 @@ export default function IntroAmimation() {
       });
 
       // LOGO aparece
-      gsap.set(logoPaths, { opacity: 0, scale: 0.6 });
+      gsap.set(logoPaths, { opacity: 0, scale: 0.4 });
       tl.to(logoPaths, {
         opacity: 1,
         scale: 1,
@@ -102,7 +102,7 @@ export default function IntroAmimation() {
       className="fixed inset-0 z-50 flex items-center justify-center bg-white"
     >
       <div className="flex items-center gap-1">
-        <div ref={logoRef} />
+        <div ref={logoRef} className=""/>
         <div ref={textRef} />
       </div>
     </div>
